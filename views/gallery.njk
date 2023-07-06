@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		{% include './includes/head.njk' %}
+	</head>
+	<body>
+		<header>
+			{% include './includes/header.njk' %}
+		</header>
+		
+		<div class="galleries">
+			{% for gallery in galleries %}
+				<div class="gallery">
+					<img class="imageProps" src="/images/DSC_9352.JPG"/>
+					{{gallery.title}}
+				</div>
+			{% endfor %}
+		</div>
+		
+		<footer>
+			{% include './includes/footer.njk' %}
+		</footer>
+	</body>
+</html>

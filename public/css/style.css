@@ -1,0 +1,98 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: auto;
+	background-color: rgb(209, 209, 209);
+}
+
+* {box-sizing: border-box;}
+
+.header-nav {
+	height: auto;
+}
+
+.header {
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.nameplate {
+	width: 15em;
+	
+	/* This calc centers the text */
+	/* Adjust the 5.7 value to center per font*/
+	margin-left: calc(50% - 5.7em);
+}
+
+.social-links {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#nameplate {
+	font-size: 2.1rem;
+}
+
+.nav-links {
+
+}
+
+.nav-images {
+	vertical-align: middle;
+	height: 40px;
+	width: 40px;
+}
+
+.navybg {
+	background-color: #011147;
+}
+
+/* FlexBox that holds the galleries */
+.galleries {
+	display: flex;
+	justify-content: space-around;
+	justify-content: center;
+	flex-flow: row wrap;
+	height: 100%;
+	width: 100%;
+}
+
+/* Each individual gallery */
+.gallery {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 600px; 
+	background-color: #011147; 
+	color: white; 
+	margin: 30px; 
+	padding: 1.25em;
+	box-shadow: 2px 2px 5px black;
+}
+
+.imageProps {
+	height: auto;
+	width: 100%;
+	padding-bottom: 1em;
+}
+
+input {color: white;}
+
+/* .gallery div {background-color: white; width: 80%; color: #001f3f; margin: 10px auto; padding: 10px; font-size: 2.4em;}
+
+.gallery p {width: 80%; margin: 10px auto; border: 3px solid white; padding: 10px;} */
+
+textarea {color: white;}
+
+.footer {
+	display: flex;
+	justify-content: space-around;
+}
+
+footer {
+	height: 50px;
+	width: 100vw;
+	color: white;
+}
