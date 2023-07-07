@@ -1,5 +1,5 @@
 html {
-	height: 100%;
+	height: auto;
 }
 
 body {
@@ -8,6 +8,10 @@ body {
 }
 
 * {box-sizing: border-box;}
+
+.navybg {
+	background-color: #011147;
+}
 
 .header-nav {
 	height: auto;
@@ -18,25 +22,84 @@ body {
 	flex-wrap: wrap;
 }
 
+input {color: white;}
+
+textarea {color: white;}
+
+.footer {
+	display: flex;
+	justify-content: space-around;
+
+}
+
+footer {
+	height: 50px;
+	width: 100%;
+	color: white;
+}
+
+/* * * * * * *
+ * INDEX CSS *
+ * * * * * * */
+
+.about-me {
+	display: flex;
+	justify-content: center;
+	font-size: 250%;
+	width: 100%;
+}
+
+.index-page-links {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	
+	height: 50px;
+	width: 100%;
+
+	margin-top: -5px;
+}
+
+.page-link {
+ font-size: 150%;
+ margin-left: 100px;
+ margin-right: 100px;
+}
+
+.link-text:link {
+	color: black;
+}
+
+.link-text:visited {
+	color: black;
+}
+
+.link-text:hover {
+	color: black;
+}
+
+.link-text:active {
+	color:black;
+}
+
+/* * * * * * * *
+ * GALLERY CSS *
+ * * * * * * * */
 .nameplate {
 	width: 15em;
 	
 	/* This calc centers the text */
-	/* Adjust the 5.7 value to center per font*/
+	/* Adjust the 5.7 value to center per*/
 	margin-left: calc(50% - 5.7em);
 }
 
 .social-links {
-	margin-right: auto;
 	margin-left: auto;
+	margin-right: auto;
 }
 
 #nameplate {
 	font-size: 2.1rem;
-}
-
-.nav-links {
-
 }
 
 .nav-images {
@@ -45,15 +108,21 @@ body {
 	width: 40px;
 }
 
-.navybg {
-	background-color: #011147;
+.gitlab-image {
+	vertical-align: middle;
+	height: 60px;
+	width: 60px;
+
+	margin-left: -25%;
 }
+
+
 
 /* FlexBox that holds the galleries */
 .galleries {
 	display: flex;
-	justify-content: space-around;
 	justify-content: center;
+	align-items: flex-start;
 	flex-flow: row wrap;
 	height: 100%;
 	width: 100%;
@@ -76,23 +145,4 @@ body {
 	height: auto;
 	width: 100%;
 	padding-bottom: 1em;
-}
-
-input {color: white;}
-
-/* .gallery div {background-color: white; width: 80%; color: #001f3f; margin: 10px auto; padding: 10px; font-size: 2.4em;}
-
-.gallery p {width: 80%; margin: 10px auto; border: 3px solid white; padding: 10px;} */
-
-textarea {color: white;}
-
-.footer {
-	display: flex;
-	justify-content: space-around;
-}
-
-footer {
-	height: 50px;
-	width: 100vw;
-	color: white;
 }
