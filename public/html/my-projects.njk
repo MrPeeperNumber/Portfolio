@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		{% include './includes/head.njk' %}
+	</head>
+	<body>
+		<header>
+			{% include './includes/header.njk' %}
+		</header>
+		<div class="title">
+			<div><b>My Projects</b></div>
+		</div>
+
+		<div>
+			<ul class="index-page-links">
+				<li class="page-link"><a class="link-text" href="/">About Me</a></li>
+				<li class="page-link"><a class="link-text" href="/gallery">Photography</a></li>
+			</ul>
+		</div>
+
+		{# Card column for each project #}
+		<div class="project-box">
+			{# Portfolio Card #}
+			<div class="project-card">
+				<h4>Portfolio Website</h4>
+				<div class="project-description">
+					<p class="desc-text">This website is my portfolio to show off my skills in my two largest passions: programming and photography. It is written primarily in Koa, with Nunjucks for templating. It also uses MongoDB and Cloudflare CDN to cache and retrieve my photography.</p>
+				</div>
+				{# Layered Button #}
+				<div class="project-link-box">
+					<a class="project-link" href="https://github.com/MrPeeperNumber/Portfolio" target="_blank">View on GitHub</a>
+				</div>
+				<div class="logos">
+					<img id="koa" src="/images/koa.png"/>
+					<img id="njk" src="/images/nunjucks.jpg"/>
+					<img id="njs" src="/images/nodejs-logo.png"/>
+				</div>
+			</div>
+
+			{# Genshin Bot Card #}
+			<div class="project-card">
+				<h4>Genshin Reminders Bot</h4>
+				<div class="project-description">
+					<p class="desc-text">Genshin Reminders Bot is a project still currently in devlopement. It's a bot built for Telegram for the game Genshin Impact, designed to help users and players remember when in-game materials are available in dungeons, as well as being able to search information about various weapons, materials, and characters. The bot sends out reminders to users as messages on the days that the materials become available.</p>
+					<p class="desc-text">The project is written in NodeJS using the node-telegram-project-api.</p>
+				</div>
+				{# Layered Button #}
+				<div class="project-link-box">
+					<div class="inner-box"><a class="project-link" href="https://github.com/MrPeeperNumber/GenshinRemindersBot" target="_blank">View on GitHub</a></div>
+				</div>
+				<div class="logos">
+					<img id="njs" src="/images/nodejs-logo.png"/>
+				</div>
+			</div>
+			
+			{# Skipper Bot #}
+			<div class="project-card">
+				<h4>Skipper Moderation Bot</h4>
+				<div class="project-description">
+					<p id="deprecated"><b>DEPRECATED</b></p>
+					<p class="desc-text">The Skipper Moderation Bot was my very first project in NodeJS. It was made for as a bot to assists moderators on Discord. Those with permissions have the ability to mute, kick, and ban people, along with various other functions.</p>
+				</div>
+				{# Layered Button #}
+				<div class="project-link-box">
+					<div class="inner-box"><a class="project-link" href="https://github.com/MrPeeperNumber/Skipper" target="_blank">View on GitHub</a></div>
+				</div>
+				<div class="logos">
+					<img id="njs" src="/images/nodejs-logo.png"/>
+				</div>
+			</div>
+		</div>
+
+	<footer>
+		{% include './includes/footer.njk' %}
+	</footer>
+	</body>
+</html>

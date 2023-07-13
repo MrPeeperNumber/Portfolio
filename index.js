@@ -63,6 +63,16 @@ route.get('/', async (ctx) => {
 
 });
 
+// My Projects
+route.get('/my-projects', async (ctx) => {
+	console.log('connected to root route');
+
+	const results = await Gallery.find({});
+	await ctx.render('my-projects.njk', {});
+
+});
+
+// Gallery
 route.get('/gallery', async (ctx) => {
 	console.log('connected to gallery route');
 
@@ -74,103 +84,9 @@ route.get('/gallery', async (ctx) => {
 
 });
 
-// show route
-route.get('/view/:id', async (ctx) => {
-
-	console.log('connected to show route');
-	const results = await Gallery.findById(ctx.params.id);
-	console.log(results);
-	await ctx.render('show.njk', {
-		post: results
-	});
-
-});
-
-// admin route
-route.get('/admin', async (ctx) => {
-
-	console.log('connected to admin route');
-	const results = await Gallery.find({});
-	console.log(results);
-	await ctx.render('admin.njk', {
-		posts: results
-	});
-
-});
-
-// delete route
-route.delete('/delete/:id', async (ctx) => {
-
-	console.log('connected to delete route');
-	console.log(ctx.request.body);
-	if(ctx.request.body.pw === process.env.pw) {
-		await Gallery.findByIdAndRemove(ctx.params.id);
-	}
-	else console.log('wrong password');
-	await ctx.render('complete.njk');
-
-});
-
-// create route
-route.get('/create', async (ctx) => {
-	console.log('connected to create route');
-	await ctx.render('create.njk');
-});
-
-route.post('/create', async (ctx) => {
-
-	console.log('creating a post');
-	console.log(ctx.request.body);
-	if(ctx.request.body.pw === process.env.pw) {
-		const results = await Gallery.create(ctx.request.body);
-		console.log(result);
-	}
-	else console.log('wrong password');
-
-	await ctx.render('complete.njk');
-
-});
-
-// edit route
-route.get('/edit/:id', async (ctx) => {
-
-	console.log('connected to the edit route');
-	const results = await Gallery.findById(ctx.params.id);
-	console.log(results);
-	await ctx.render('edit.njk', {
-		post: results
-	});
-
-});
-
-route.put('/edit/:id', async (ctx) => {
-
-	console.log('editing a post');
-	console.log(ctx.request.body);
-	if(ctx.request.body.pw === process.env.pw) {
-		const results = await Gallery.findByIdAndUpdate(ctx.params.id, ctx.request.body, {new:true});
-		console.log(results);
-	}
-	else console.log('wrong password');
-	await ctx.render('complete.njk');
-
-});
-
 // route.get('/', (ctx, next) => {
 // 	return ctx.render('./index.html', {
 // 		name: process.env.VAR
-// 	})
-// });
-
-route.get('/:name', async (ctx) => {
-	await ctx.render('./index.njk', {
-		name:ctx.params.name
-	});
-});
-
-// route.get('/:name', (ctx, next) => {
-// 	return ctx.render('./index.njk', {
-// 		name: ctx.params.name
 // 	})
 // });
 

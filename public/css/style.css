@@ -3,11 +3,18 @@ html {
 }
 
 body {
+	font-family: 'Signika Negative';
+
 	height: auto;
 	background-color: rgb(209, 209, 209);
 }
 
 * {box-sizing: border-box;}
+
+p {
+	padding: 0;
+	margin: 0;
+}
 
 .navybg {
 	background-color: #011147;
@@ -22,75 +29,12 @@ body {
 	flex-wrap: wrap;
 }
 
-input {color: white;}
-
-textarea {color: white;}
-
-.footer {
-	display: flex;
-	justify-content: space-around;
-
-}
-
-footer {
-	height: 50px;
-	width: 100%;
-	color: white;
-}
-
-/* * * * * * *
- * INDEX CSS *
- * * * * * * */
-
-.about-me {
-	display: flex;
-	justify-content: center;
-	font-size: 250%;
-	width: 100%;
-}
-
-.index-page-links {
-	display: flex;
-	justify-content: center;
-	flex-flow: row wrap;
-	
-	height: 50px;
-	width: 100%;
-
-	margin-top: -5px;
-}
-
-.page-link {
- font-size: 150%;
- margin-left: 100px;
- margin-right: 100px;
-}
-
-.link-text:link {
-	color: black;
-}
-
-.link-text:visited {
-	color: black;
-}
-
-.link-text:hover {
-	color: black;
-}
-
-.link-text:active {
-	color:black;
-}
-
-/* * * * * * * *
- * GALLERY CSS *
- * * * * * * * */
 .nameplate {
 	width: 15em;
 	
 	/* This calc centers the text */
 	/* Adjust the 5.7 value to center per*/
-	margin-left: calc(50% - 5.7em);
+	margin-left: calc(50% - 6.6em);
 }
 
 .social-links {
@@ -99,24 +43,117 @@ footer {
 }
 
 #nameplate {
-	font-size: 2.1rem;
+	font-variant: small-caps;
+	font-size: 2.5rem;
 }
 
 .nav-images {
 	vertical-align: middle;
+	
 	height: 40px;
 	width: 40px;
 }
 
 .gitlab-image {
 	vertical-align: middle;
+	
 	height: 60px;
 	width: 60px;
 
 	margin-left: -25%;
 }
 
+input, textarea {color: white;}
 
+.footer {
+	display: flex;
+	justify-content: space-around;
+}
+
+footer {
+	height: 50px;
+	width: 100%;
+	
+	color: white;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	
+	font-size: 250%;
+	font-variant-caps: small-caps;
+	
+	width: 100%;
+
+	margin-bottom: -5px;
+}
+
+/* * * * * * *
+ * INDEX CSS *
+ * * * * * * */
+
+.index-page-links {
+	display: flex;
+	justify-content: space-evenly;
+	flex-flow: row wrap;
+	
+	height: auto;
+	width: 100%;
+
+	margin-top: auto;
+}
+
+.page-link {
+	background-color: #011147;
+ 	
+	font-size: 150%;
+ 	
+	margin-top: 0.5em;
+	margin-left: 75px;
+ 	margin-right: 75px;
+
+	padding: 0.2em 0.5em;
+
+	box-shadow: 2px 2px 5px;
+	border-radius: 3px;
+}
+
+.link-text {
+	text-align: center;
+
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+}
+
+.link-text:link, .link-text:visited, .link-text:hover, .link-text:active {
+	color: white;
+}
+
+.about-me {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	
+	width: 100%;
+}
+
+#about-me-title {
+	font-size: 225%;
+	text-align: center;
+}
+
+#about-me-text {
+	font-size: 150%;
+	text-align: center;
+	
+	max-width: 50%;
+}
+
+/* * * * * * * *
+ * GALLERY CSS *
+ * * * * * * * */
 
 /* FlexBox that holds the galleries */
 .galleries {
@@ -124,8 +161,11 @@ footer {
 	justify-content: center;
 	align-items: flex-start;
 	flex-flow: row wrap;
+	
 	height: 100%;
 	width: 100%;
+
+	margin-top: -1em;
 }
 
 /* Each individual gallery */
@@ -133,16 +173,119 @@ footer {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	
 	width: 600px; 
+	
 	background-color: #011147; 
 	color: white; 
+	
 	margin: 30px; 
 	padding: 1.25em;
+	
 	box-shadow: 2px 2px 5px black;
 }
 
 .imageProps {
 	height: auto;
 	width: 100%;
+	
 	padding-bottom: 1em;
+}
+
+/* * * * * * * * *
+ *  PROJECTS CSS *
+ * * * * * * * * */
+
+.project-box {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+
+	height: auto;
+	width: 100%;
+}
+
+.project-card:first-child {
+	margin-top: 0.5em;
+}
+
+.project-card {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+
+	width: 50%;
+
+	margin-bottom: 1.5em;
+
+	color: white;
+
+	background-color: #011147;
+	box-shadow: 2px 2px 5px black;
+	border-radius: 3px;
+	border: 2px solid white;
+}
+
+.project-description {
+	width: 90%;
+
+	padding-bottom: 1.5em;
+
+	color: white;	
+}
+
+.desc-text {
+	font-size: 150%;
+}
+
+.project-link-box {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+
+	height: 40px;
+	width: 125px;
+
+	margin-bottom: 1.7em;
+
+	border: 2px solid white;
+	background-color: #011147;
+}
+
+.project-link {
+	color: white;
+
+	padding-bottom: 1px;
+}
+
+#deprecated {
+	text-align: center;
+
+	font-size: 150%;
+
+	color: #b90000;
+}
+
+.logos {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	height: 40px;
+	width: 60%;
+
+	margin-bottom: 1em;
+}
+
+#koa {
+	height: 40px;	
+}
+
+#njk {
+	height:40px;
+}
+
+#njs {
+	height:40px;
 }
