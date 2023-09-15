@@ -18,11 +18,10 @@
 		</div>
 
 		<div class="galleries">
-			{% for title in titles %}
-				<a class="gallery-link" href="/gallery/{{title}}"><div class="gallery">
-					<img class="image" src="{{images[loop.index0]}}">
-					{{title}}
-				</div></a>
+			{% for image in images %}
+				<a class="gallery-link" href="{{image}}" target="_blank">
+					<img class="image" src="{{image}}"/>
+				</a>
 			{% endfor %}
 		</div>
 		

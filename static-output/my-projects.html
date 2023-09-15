@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang=en>
 	<head>
-		{% include './includes/head.njk' %}
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Jake Roberts</title>
+
+<!-- Signika Font! -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Signika+Negative" />
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<!script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js defer></script>
+
+<link rel="stylesheet" href="/css/style.css">
 	</head>
 	<body>
 		<header>
-			{% include './includes/header.njk' %}
+			<nav class="header-nav">
+	<div class="header navybg">
+		<div class="nameplate">
+			<a href="/" id="nameplate">Jake Roberts</a>
+		</div>
+		<div class="social-links">
+			<ul class="nav-links">
+				
+				<li><a href="https://github.com/MrPeeperNumber" target="_blank"><img class="nav-images" src="/images/github.png"></a></li>
+				
+				<li><a href="http://www.linkedin.com/in/jakeroberts45" target="_blank"><img class="nav-images" src="/images/linkedin.png"></a></li>
+				
+				<li><a href="https://gitlab.com/jakeroberts45" target="_blank"><img class="gitlab-image" src="/images/gitlab.png"></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
 		</header>
 		<div class="title">
 			<div><b>My Projects</b></div>
@@ -18,15 +48,15 @@
 			</ul>
 		</div>
 
-		{# Card column for each project #}
+		
 		<div class="project-box">
-			{# Portfolio Card #}
+			
 			<div class="project-card">
 				<h4>Portfolio Website</h4>
 				<div class="project-description">
 					<p class="desc-text">This website is my portfolio to show off my skills in my two largest passions: programming and photography. It is written primarily in Koa, with Nunjucks for templating, and utilizes Axios to retrieve my photography from buckets hosted in Backblaze.</p>
 				</div>
-				{# Layered Button #}
+				
 				<div class="project-link-box">
 					<a class="project-link" href="https://github.com/MrPeeperNumber/Portfolio" target="_blank">View on GitHub</a>
 				</div>
@@ -38,14 +68,14 @@
 				</div>
 			</div>
 
-			{# Genshin Bot Card #}
+			
 			<div class="project-card">
 				<h4>Genshin Reminders Bot</h4>
 				<div class="project-description">
 					<p class="desc-text">Genshin Reminders Bot is a project still currently in devlopement. It's a bot built for Telegram for the game Genshin Impact, designed to help users and players remember when in-game materials are available in dungeons, as well as being able to search information about various weapons, materials, and characters. The bot sends out reminders to users as messages on the days that the materials become available.</p>
 					<p class="desc-text">The project is written in NodeJS using the node-telegram-project-api.</p>
 				</div>
-				{# Layered Button #}
+				
 				<div class="project-link-box">
 					<div class="inner-box"><a class="project-link" href="https://github.com/MrPeeperNumber/GenshinRemindersBot" target="_blank">View on GitHub</a></div>
 				</div>
@@ -54,14 +84,14 @@
 				</div>
 			</div>
 			
-			{# Skipper Bot #}
+			
 			<div class="project-card">
 				<h4>Skipper Moderation Bot</h4>
 				<div class="project-description">
 					<p id="deprecated"><b>DEPRECATED</b></p>
 					<p class="desc-text">The Skipper Moderation Bot was my very first project in NodeJS. It was made for as a bot to assists moderators on Discord. Those with permissions have the ability to mute, kick, and ban people, along with various other functions.</p>
 				</div>
-				{# Layered Button #}
+				
 				<div class="project-link-box">
 					<div class="inner-box"><a class="project-link" href="https://github.com/MrPeeperNumber/Skipper" target="_blank">View on GitHub</a></div>
 				</div>
@@ -72,7 +102,17 @@
 		</div>
 
 	<footer>
-		{% include './includes/footer.njk' %}
+		<nav>
+	<div class="footer navybg">
+		<div>
+			<ul class="nav-links">
+				<li><a href="https://github.com/MrPeeperNumber" target="_blank"><img class="nav-images" src="/images/github.png"></a></li>
+				<li><a href="http://www.linkedin.com/in/jakeroberts45" target="_blank"><img class="nav-images" src="/images/linkedin.png"></a></li>
+				<li><a href="https://gitlab.com/jakeroberts45" target="_blank"><img class="gitlab-image" src="/images/gitlab.png"></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
 	</footer>
 	</body>
 </html>

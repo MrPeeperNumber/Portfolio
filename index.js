@@ -6,24 +6,27 @@ require('dotenv').config();
 const override = require('koa-methodoverride');
 const parser = require('koa-bodyparser');
 
-// Connect to database
-// require mongoose
-const mongoose = require('mongoose');
-const db = mongoose.connection;
-const host = process.env.CLUSTER;
-const dbupdate = {
-	useNewUrlParser: true,
-	useUnifiedTopology:true,
-};
-mongoose.connect(host, dbupdate);
+// Backblaze
+const backblaze = require('./backblaze.js');
 
-db.on('error', (err) => console.log('Error, DB not connected'));
-db.on('connected', () => console.log('Connected to Mongo'));
-db.on('disconnected', () => console.log('Mongo is Disconnected'));
-db.on('open', () => console.log('Connection made!'));
+// // Connect to database
+// // require mongoose
+// const mongoose = require('mongoose');
+// const db = mongoose.connection;
+// const host = process.env.CLUSTER;
+// const dbupdate = {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology:true,
+// };
+// mongoose.connect(host, dbupdate);
 
-//Model Schema
-const Gallery = require('./models/gallery.js');
+// db.on('error', (err) => console.log('Error, DB not connected'));
+// db.on('connected', () => console.log('Connected to Mongo'));
+// db.on('disconnected', () => console.log('Mongo is Disconnected'));
+// db.on('open', () => console.log('Connection made!'));
+
+// //Model Schema
+// const Gallery = require('./models/gallery.js');
 
 // Create Koa server
 const koa = require ('koa');
@@ -58,7 +61,6 @@ nunj.configure('./views', {autoescape: true});
 route.get('/', async (ctx) => {
 	console.log('connected to root route');
 
-	const results = await Gallery.find({});
 	await ctx.render('index.njk', {});
 
 });
@@ -67,7 +69,6 @@ route.get('/', async (ctx) => {
 route.get('/my-projects', async (ctx) => {
 	console.log('connected to root route');
 
-	const results = await Gallery.find({});
 	await ctx.render('my-projects.njk', {});
 
 });
@@ -75,20 +76,32 @@ route.get('/my-projects', async (ctx) => {
 // Gallery
 route.get('/gallery', async (ctx) => {
 	console.log('connected to gallery route');
+	const results = await backblaze.getResults();
 
-	const results = await Gallery.find({});
-	console.log(Object.getOwnPropertyNames(results[0]));
+	console.log(Object.keys(results));
+
+	let firstImages = [];
+	for(values of Object.values(results)) {
+		firstImages.push(values[0]);
+	}
+
 	await ctx.render('gallery.njk', {
-		galleries: results.map(result => { result.images = result.get('images'); return result })
+		titles: Object.keys(results),
+		images: firstImages
 	});
 
 });
 
-// route.get('/', (ctx, next) => {
-// 	return ctx.render('./index.html', {
-// 		name: process.env.VAR
-// 	})
-// });
+// Individual Galleries
+route.get('/gallery/:name', async (ctx) => {
+	const results = await backblaze.getResults();
+	const name = ctx.params.name;
+
+	console.log(results);
+	await ctx.render('gallery-images.njk', {
+		images: Object.values(results[name])
+	})
+});
 
 // Middleware
 // Everything that happens between the request and the response\
